@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+    <!--<environmentMode>FULL_ASSERT</environmentMode>--><!-- To slowly prove there are no bugs in this code -->
+    <moveThreadCount>AUTO</moveThreadCount>
+
+    <solutionClass>edu.bsu.polaris.solver.planner.domain.Schedule</solutionClass>
+    <entityClass>edu.bsu.polaris.solver.planner.domain.Allocation</entityClass>
+
+    <scoreDirectorFactory>
+        <incrementalScoreCalculatorClass>edu.bsu.polaris.solver.planner.solver.score.ProjectJobSchedulingIncrementalScoreCalculator</incrementalScoreCalculatorClass>
+        <!--<scoreDrl>org/optaplanner/examples/projectjobscheduling/solver/projectJobSchedulingScoreRules.drl</scoreDrl>-->
+    </scoreDirectorFactory>
+
+    <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+    </constructionHeuristic>
+    <localSearch>
+        <unionMoveSelector>
+            <changeMoveSelector>
+                <valueSelector variableName="executionMode"/>
+            </changeMoveSelector>
+            <changeMoveSelector>
+                <valueSelector variableName="delay"/>
+            </changeMoveSelector>
+        </unionMoveSelector>
+        <acceptor>
+            <entityTabuRatio>0.2</entityTabuRatio>
+            <lateAcceptanceSize>500</lateAcceptanceSize>
+        </acceptor>
+        <forager>
+            <acceptedCountLimit>4</acceptedCountLimit>
+        </forager>
+    </localSearch>
+</solver>

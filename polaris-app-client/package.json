@@ -1,0 +1,29 @@
+{
+  "name": "polaris-app-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hh.ru/react-d3-chart-graphs": "^5.2.1",
+    "@trendmicro/react-sidenav": "^0.4.5",
+    "antd": "^3.2.2",
+    "bootstrap": "^4.3.1",
+    "d3-time-format": "^2.1.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-modal": "^3.8.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "vis": "^4.21.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.6.5",
+    "react-app-rewire-less": "^2.1.0",
+    "react-app-rewired": "^1.4.1"
+  }
+}
